@@ -24,38 +24,53 @@ const nedPenny = new UserModel({
     email:'bigolnedp@email.com',
     userName:'nedarifficuss',
     password:'*********',
-    stable:{
+    stable:[{
         make:'Chevrolet',
         model:'Chevelle',
         year:1968,
         engine: '5.3L',
         trans: '4L60E',
         vin: '1383663b1a'
-    }
+    }]
     });
-    const sallyWally = new UserModel({
-        name: 'Sally Wally',
-        phoneNumber: 123456789,
-        email:'swall59@email.com',
-        userName:'sallysue',
-        password:'*********',
-        stable:{
-            make:'Ford',
-            model:'F150',
-            year:2015,
-            engine: '5.4L',
-            trans: 'C6',
-            vin: '8h7sj789803o2kk334'
-        },    
+const sallyWally = new UserModel({
+    name: 'Sally Wally',
+    phoneNumber: 123456789,
+    email:'swall59@email.com',
+    userName:'sallysue',
+    password:'*********',
+    stable:[{
+        make:'Ford',
+        model:'F150',
+        year:2015,
+        engine: '5.4L',
+        trans: 'C6',
+        vin: '8h7sj789803o2kk334'
+    }],    
 });
-users.forEach((car)=>{
-    car.stable = stable
-    users.save()
-    .then((car)=>{
-        console.log(`${car.stable} saved`)
+// users.forEach((car)=>{
+//     car.stable = stable
+//     users.save()
+//     .then((car)=>{
+//         console.log(`${car.stable} saved`)
+//     })
+//     .catch((error)=>{
+//         console.log(error)
+//     })
+// })
+nedPenny.save()
+    .then(()=>{
+        console.log(`Ned Penny saved`)
     })
     .catch((error)=>{
         console.log(error)
     })
+sallyWally.save()
+.then(()=>{
+    console.log(`Sally Wally saved`)
 })
+.catch((error)=>{
+    console.log(error)
+})   
+
 db.close();
