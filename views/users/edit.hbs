@@ -1,0 +1,23 @@
+<form action="/users/{{user._id}}?_method=PUT" method="POST">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{user.name}}">
+
+    <label for="phoneNumber">Phone Number</label>
+    <input type="number" name="phoneNumber" value="{{user.phoneNumber}}">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{user.email}}">
+
+    <label for="userName">User Name</label>
+    <input type="text" name="userName" value="{{user.userName}}">
+
+    <label for="password">Password</label>
+    <input type="text" name="password" value="{{user.password}}">
+
+    <label for="stable">Stable</label>
+    <input type="text" name="stable" value="{{user.stable}}">
+
+    <input type="submit" value="Edit">
+
+</form>

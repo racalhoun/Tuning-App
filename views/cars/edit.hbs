@@ -1,0 +1,21 @@
+<form action='/users/{{userId}}/cars/{{car._id}}?_method=PUT' method="POST">
+<label for='make'>Make</label>
+<input type='text' name="make" value='{{car.make}}'>
+
+<label for='model'>Model</label>
+<input type="text" name="model" value="{{car.model}}">
+
+<label for="year">Year</label>
+<input type="number" name="year" value="{{car.year}}">
+
+<label for="engine">Engine</label>
+<input type="text" name="engine" value="{{car.engine}}">
+
+<label for="trans">Trans</label>
+<input type="text" name="trans" value="{{car.engine}}">
+
+<label for="vin">VIN</label>
+<input type="text" name="vin" value="{{car.vin}}">
+
+<input type="submit" value="Edit">
+</form>

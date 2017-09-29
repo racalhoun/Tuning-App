@@ -1,0 +1,17 @@
+<div>
+<div>
+    <h1>{{user.name}}'s Stable</h1>
+    </div>
+    <div>
+       <a href="/users/{{user._id}}/cars/new">Enter a New Car</a>
+    </div>
+    <div>
+       <a href="/users">Back to Users</a>
+    </div>
+    {{#each user.stable}}
+       <div>
+           {{this.make}} - {{this.model}} - {{this.year}} - {{this.engine}} - {{this.trans}} - {{this.vin}}
+           <a href="/users/{{../user._id}}/cars/{{this._id}}">View</a>
+       </div>
+    {{/each}}
+    </div>   

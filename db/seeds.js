@@ -48,3 +48,14 @@ const nedPenny = new UserModel({
             vin: '8h7sj789803o2kk334'
         },    
 });
+users.forEach((car)=>{
+    car.stable = stable
+    users.save()
+    .then((car)=>{
+        console.log(`${car.stable} saved`)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
+db.close();
