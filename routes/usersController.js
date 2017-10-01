@@ -8,36 +8,36 @@ const UserModel = Schema.UserModel
 router.get('/', (req, res,) =>{
   UserModel.find({})
   .then((users)=>{
-    res.render('users/index', {
-      users: users
-    })
+    res.render('users/show') 
+     users:users  
   })
-  .catch((err)=>{
-    console.log('users index not found');
-  })
-});
+})
 //NEW route
 router.get('/new', (req, res)=>{
   res.render('users/new')
 })
 //CREATE route
 router.post('/', (req, res)=>{
-const newUser = req.body;
+//console.log('test')
+  //const userId = req.params.userId
+  const newUser = req.body;
  UserModel.create(newUser)
   .then(()=>{
    res.redirect('/users')
- }) 
+    //return userId.save()
+  }) 
   .catch((error)=>{
     console.log('cannot find create')
   })
 })
 //EDIT
 router.get('/:userId/edit', (req, res)=>{
+console.log('test edit')
 const userId = req.params.userId
  UserModel.findById(userId)
   .then((user)=>{
    res.render('users/edit', {
-     user: user
+     user:user
    })
   })
   .catch((error)=>{
@@ -57,11 +57,11 @@ const updatedUser = req.body
   })
 })
 //SHOW
-router.get('/userId', (req, res)=>{
+router.get('/:userId', (req, res)=>{
 const userId = req.params.userId
  UserModel.findById(userId)
-  .the((user)=>{
-    res.render('/users/show', {
+  .then((user)=>{
+    res.render('users/show', {
       user: user
     })
   .catch((error)=>{
@@ -71,10 +71,10 @@ const userId = req.params.userId
 })
 //DELETE route
 router.get('/:userId/delete', (req, res)=>{
-const userId = req.oarams.userId
+const userId = req.params.userId
  UserModel.findByIdAndRemove(userId)
   .then(()=>{
-    res.redirect('/users')
+    res.redirect('/')
   })
   .catch((error)=>{
     console.log('delete fail')

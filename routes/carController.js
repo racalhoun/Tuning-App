@@ -5,18 +5,16 @@ const Schema = require('../db/schema.js');
 const CarStable = Schema.CarStable
 /* GET users listing. */
 //INDEX
-router.get('/', function(req, res) {
-const userId = re.params.userId
- UserModel.findById(userId)
+router.get('/',(req, res) =>{
+ CarStable.find({})
   .then((user)=>{
-    ('cras/index', {
+    res.render('cars/show')
       user: user
-    })
-  })  
+    })  
   .catch((error)=>{
     console.log('cannot find car index')
   })
-})
+ })
 //NEW route- tying the new car to the user id
 router.get('/new', (req,res)=>{
 const userId = req.params.userId
@@ -91,7 +89,7 @@ const carId = req.params.cardId
    console.log('show route issue')
  })
 })
-//DLEETE
+//DLETE
 router.get('/:car/delete', (req, res)=>{
 const userId = req.params.userId
 const carId = req.params.cardId

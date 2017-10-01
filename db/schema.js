@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const Stage1Schema = new Schema({
+const PackageSchema = new Schema({
     name:{
         type: String,
         required: true
@@ -15,58 +15,31 @@ const Stage1Schema = new Schema({
         required: true
     }
 })
-const Stage2Schema = new Schema({
+
+const TunerSchema = new Schema({
     name:{
         type: String,
         required: true
     },
-    description:{
+    phoneNumber:{
+        type: Number,
+        required: true
+    },
+    email:{
         type: String,
         required: true
     },
-    price:{
-        type: Number,
-        required: true
-    }
-})
-const Stage3Schema = new Schema({
-    name:{
+    location:{
         type: String,
         required: true
     },
-    description:{
+    experience:{
         type: String,
-        required: true   
-    },
-    price:{
-        type: Number,
-        required: true
-    }
-
-})
-
-/*const CartSchema = new Schema({
-    description:{
-        type: String,
-        required: true
-    },
-    quantity:{
-        type: Number,
-        requred: true
-    },
-    subtotal:{
-        type: Number,
-        required: true
-    },
-    tax:{
-        type: Number,
         required: false
-    },
-    total:{
-        type: Number,
-        required: true
     }
-}) Table this until after MVP is met*/
+})
+
+
 const CarSchema = new Schema({
     make:{
     type: String,
@@ -116,10 +89,14 @@ const UserSchema = new Schema({
     },
     stable: [CarSchema]  
 });
-const UserModel = mongoose.model('User', UserSchema)
-const CarStable = mongoose.model('Car', CarSchema)
+const UserModel = mongoose.model('users', UserSchema)
+const CarStable = mongoose.model('cars', CarSchema)
+const TunerModel = mongoose.model('tuner', TunerSchema)
+const PackageModel = mongoose.model('package', PackageSchema)
 
 module.exports = {
     UserModel: UserModel,
-    CarStable: CarStable
+    CarStable: CarStable,
+    TunerModel: TunerModel,
+    PackageModel: PackageModel
 }

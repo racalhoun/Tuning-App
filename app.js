@@ -9,7 +9,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override')
 
-
+//Database set-up
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
 
 var app = express();
 
@@ -17,9 +19,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-//Database Set-up
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
+
+
 
 const db = mongoose.connection
 db.on('error', (error)=>{
@@ -44,14 +45,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
 //Register Controllers
-var index = require('./routes/index');
-app.use('/', index);
+var homeController = require('./routes/homeController');
+app.use('/home', homeController);
 
-var users = require('./routes/usersController');
-app.use('/users', users);
+var carController = require('./routes/carController');
+app.use('/cars', carController);
 
-var cars = require('./routes/carController');
-app.use('/cars', cars);
+var packageController = require('./routes/packageController');
+app.use('/package', packageController);
+
+var indexController = require('./routes/indexController');
+app.use('/', indexController);
+
+var tunerController = require('./routes/tunerController');
+app.use('/tuner', tunerController);
+
+var usersController = require('./routes/usersController');
+app.use('/users', usersController);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,7 +73,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
