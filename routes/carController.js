@@ -8,11 +8,11 @@ const CarStable = Schema.CarStable
 router.get('/',(req, res) =>{
  CarStable.find({})
   .then((user)=>{
-    res.render('cars/show')
-      user: user
+    res.render('cars/index')
+      user:user
     })  
   .catch((error)=>{
-    console.log('cannot find car index')
+    console.log(error)
   })
  })
 //NEW route- tying the new car to the user id

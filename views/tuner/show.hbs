@@ -1,1 +1,24 @@
-Tuners Show
+
+<div>
+    Tuners show
+    
+    <div>Name: {{tuner.name}}</div>
+    <div>Phone Number: {{tuner.phoneNumber}}</div>
+    <div>Email: {{tuner.email}}</div>
+    <div>Location: {{tuner.location}}</div>
+    <div>Experience: {{tuner.experience}}</div>
+   
+    
+    <div>
+    <a href="/">Home</a>
+    </div>
+    <div>
+        <a href="tuner/new">New Tuner</a>
+    </div>
+    <div>
+    <a href="/tuner/{{tuner._id}}/edit">Edit</a>    
+    </div>
+    <div>
+    <a href="/tuner/{{tuner._id}}/delete">Delete</a>    
+    </div>
+</div>

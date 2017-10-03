@@ -1,0 +1,31 @@
+
+<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+     
+        <div class="usersindex">  
+    <h1 class="display">Tuners</h1>
+    
+        <button class="new1"><a href="/tuner/new">Register</a></button>
+    </div>
+    
+     <div>
+     <ul class="listgroup">
+    {{#each tuner}}
+        <div>
+           <li class="list-group-item"><h3>Name:</h3> {{name}} </li>
+         </div>    
+        <div>
+           <li class="list-group-item"><h3>Phone Number:</h3> {{phoneNumber}} </li>
+         </div>    
+        <div>
+           <li class="list-group-item"><h3>Email:</h3> {{email}} </li>
+         </div>    
+        <div>
+          <li class="list-group-item"><h3>Location:</h3> {{location}} </li>
+         </div>    
+        <div>
+           <li class="list-group-item"><h3>Experience:</h3> {{experience}} </li>
+         </div>    
+    {{/each}} 
+         </ul>
+    </div>    
+  </div>

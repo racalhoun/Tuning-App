@@ -1,26 +1,33 @@
 
-    <div> 
-    <h1>Users:</h1>
-    <div>
-        <a href="/users/new">Add a New User</a>
-    </div>
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+     
+        <div class="usersindex">
+     <h1 class="display">Users</h1>
+        <button class="new1"><a href="/users/new">Add a New User</a></button>
+      </div>
     
-    {{#each users}}
     <div>
-       <ul>
-          {{this.name}} - {{this.stable}}
-            
+    <div id="userindex"> 
+    </div>
+     <div>
+      <ul class="listgroup"> 
+    {{#each users}}
+        <div>
+          <li class="list-group-item"><h3>Name:{{name}}</h3> </li>   
+        </div>
+        <div>
+          <li class="list-group-item"><h3>Contact:{{email}}</h3> </li>
+        </div>   
+        <div>
+           <li class="list-group-item"><h3>Cars:</h3> 
+           {{stable.make}}
+           {{stable.model}}</li>
+        </div>        
+    {{/each}} 
+         </ul>
+      </div>
+    
         
-        </ul>
-    </div>          
-            <!-- <a href="/users/{{this._id}}">{{this.name}}Info</a>-->
-            <!--<a href="/users/{{this._id}}/cars">{{this.name}}'s Cars</a>-->
-           {{/each}} 
-           
-            <a href="/users/{{this._id}}/edit">Edit</a>
-            <a href="/users/{{this._id}}/delete">Delete</a> 
-        
-        
-
-   
-  </div>
+  

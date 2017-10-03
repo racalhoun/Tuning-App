@@ -1,0 +1,39 @@
+{{!-- <div>
+    {{#each package}}
+<h1>{{name}}</h1>
+<h2>Description:</h2><p>{{description}}</p>
+<h2>Price:</h2>${{price}}<br>
+
+<button class="cart"><a href="/users/show">Cart</a></button>
+    {{/each}} --}}
+
+{{#each package}}
+<div class="p-3 ">
+<ul class="list-unstyled">
+  <li class="media">
+    {{!-- <img class="d-flex mr-3" src="/images/turtle.jpg" alt="Generic placeholder image"> --}}
+    <div class="media-body">
+    <h2>{{name}}</h2>
+      <h2>Description:</h2><p class="desc">{{description}}</p>
+      <h5><button type="button" class="btn btn-outline-dark">Price:${{price}}</button></h5>
+      </div>
+    </div>
+    {{/each}}
+    <button class="new1"><a href="/tuner">Find a Tuner</a></button>
+      <button class="new1"><a href="/">Home</a></button>
+  {{!-- </li>
+  <li class="media my-4">
+    <img class="d-flex mr-3" src="..." alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media">
+    <img class="d-flex mr-3" src="..." alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+</ul> --}}

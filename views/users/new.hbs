@@ -1,23 +1,65 @@
+
+
+
+
+ {{!-- <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+<h1 id="newUserInfo">New User Information</h1>
+
 <form action="/users" method="POST">
+ <div>
+ <div class="form-group">
+    <label class="form-control-label" for="name">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="name">
+  </div>
+  <div class="form-group">
+    <label class="form-control-label" for="phoneNumber"></label>
+    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="phoneNumber">
+  </div>
+   <div class="form-group">
+    <label class="form-control-label" for="email">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="email">
+  </div>
+  <div class="form-group">
+    <label class="form-control-label" for="userName">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="userName">
+  </div>
+  <div class="form-group">
+    <label class="form-control-label" for="password">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="password">
+  </div>
+   </div> 
+   <button type='submit' value='Create' class="btn btn-light">Create</button>
+</form>  --}}
 
-    <label for="name">Name</label>
-    <input type="text" name="name">
+<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+<h1 id="newUserInfo">New User Information</h1>
 
-    <label for="phoneNumber">Phone Number</label>
-    <input type="number" name="phoneNumber">
-
-    <label for="email">Email</label>
-    <input type="text" name="email">
-
-    <label for="userName">User Name</label>
-    <input type="text" name="userName">
-
-    <label for="password">Password</label>
-    <input type="text" name="password">
-
+<form action="/users" method="POST">
+ <div id="newuser">
+     
+    {{!-- <label for="name"><h3></h3></label> --}}
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="name" placeholder="name"><br>
+   
+   
+    {{!-- <label for="phoneNumber"><h3>Phone Number:</h3></label> --}}
+    <input type="number" class="form-control" id="formGroupExampleInput2" name="phoneNumber" placeholder="phone number"><br>
+   
    
 
+    {{!-- <label for="email"><h3>Email:</h3></label> --}}
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="email" placeholder="email"><br>
 
-    <input type='submit' value='Create'>
+    {{!-- <label for="userName"><h3>User Name:</h3></label> --}}
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="userName" placeholder="user name"><br>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="password" placeholder="user name"><br>
+    
 
-</form>
+    {{!-- <label for="password"><h3>Password:</h3></label> --}}
+    {{!-- <input type="text" name="password" placeholder="passwrod"><br> --}}
+    
+   <button type='submit' class="form-control" value='Create' class="btn btn-light">Create</button>
+   </div>  
+</form> 
+ <button class="new1"><a href="/">Home</a></button>
+{{!-- <input type='submit' value='Create'>--}}
+  

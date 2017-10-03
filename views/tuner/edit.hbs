@@ -1,0 +1,25 @@
+<form action="/users/{{tuner._id}}?_method=PUT" method="POST"> 
+
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{tuner.name}}">
+
+    <label for="phoneNumber">Phone Number</label>
+    <input type="number" name="phoneNumber" value="{{tuner.phoneNumber}}">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{tuner.email}}">
+
+    <label for="location">Location</label>
+    <input type="text" name="location" value="{{tuner.location}}">
+    
+    <label for="experience">Experience</label>
+    <input type="text" name="experience" value="{{tuner.experience}}">
+
+
+    <!--<label for="stable">Stable</label>
+    <input type="text" name="stable" value="{{user.stable}}">-->
+
+    <input type="submit" value="Edit">
+
+</form>

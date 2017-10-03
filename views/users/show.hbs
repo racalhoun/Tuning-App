@@ -1,20 +1,22 @@
-<div>
-    Users show
-    {{#each users}}
-    <div>Name: {{this.name}}</div>
-    <div>Phone Number: {{this.phoneNumber}}</div>
-    <div>Email: {{this.email}}</div>
-    <div>User Name: {{this.userName}}</div>
-    <div>Password: {{this.password}}</div>
-    <div>Stable: {{this.stable}}</div>
-    {{/each}}
-    <div>
-    <a href="/users">Return to Users</a>
+<div id="useshow">
+    <ul id="verifyinfo"></ul>
+    <h5>Users show</h5>
+    
+    <div>Name:  {{user.name}}</div>
+    <div>Phone Number: {{user.phoneNumber}}</div>
+    <div>Email: {{user.email}}</div>
+    <div>User Name:{{user.userName}}</div>
+    <div>Password: {{user.password}}</div>
+    <div>Stable: {{user.stable}}</div>
+    </ul>
+   
+    <div class="new2">
+    <button class="new1"><a href="/">Home</a></button>
+    
+  
+    <button class="new1"><a href="/users/{{user._id}}/edit">Edit</a></button>    
+   
+   
+    <button class="new1"><a href="/users/{{user._id}}/delete">Delete</a></button>    
     </div>
-    <div>
-    <a href="/users/{{user._id}}/edit">Edit</a>    
-    </div>
-    <div>
-    <a href="/users/{{user._id}}/delete">Delete</a>    
-    </div>
-</div>
+   </div>

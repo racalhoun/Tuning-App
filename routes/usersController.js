@@ -5,11 +5,13 @@ const Schema = require('../db/schema.js')
 const UserModel = Schema.UserModel
 /* GET users listing. */
 //INDEX route
-router.get('/', (req, res,) =>{
+router.get('/', (req, res) =>{
   UserModel.find({})
-  .then((users)=>{
-    res.render('users/show') 
-     users:users  
+   .then((users)=>{
+    console.log(users) 
+    res.render('users/index', {
+      users:users  
+    })   
   })
 })
 //NEW route
@@ -18,16 +20,13 @@ router.get('/new', (req, res)=>{
 })
 //CREATE route
 router.post('/', (req, res)=>{
-//console.log('test')
-  //const userId = req.params.userId
-  const newUser = req.body;
+   const newUser = req.body;
  UserModel.create(newUser)
-  .then(()=>{
-   res.redirect('/users')
-    //return userId.save()
+  .then((user)=>{
+   res.redirect(`/users/${user._id}`)
   }) 
   .catch((error)=>{
-    console.log('cannot find create')
+    console.log(error)
   })
 })
 //EDIT
@@ -41,7 +40,7 @@ const userId = req.params.userId
    })
   })
   .catch((error)=>{
-    console.log('cannot find edit')
+    console.log(error)
   })
 })
 //UPDATE
@@ -53,7 +52,7 @@ const updatedUser = req.body
     res.redirect(`/users/${userId}`)
   })
   .catch((error)=>{
-    console.log('update issue')
+    console.log(error)
   })
 })
 //SHOW
@@ -62,10 +61,10 @@ const userId = req.params.userId
  UserModel.findById(userId)
   .then((user)=>{
     res.render('users/show', {
-      user: user
+      user:user
     })
   .catch((error)=>{
-    console.log('show error')
+    console.log(error)
   })
   })  
 })
@@ -74,10 +73,10 @@ router.get('/:userId/delete', (req, res)=>{
 const userId = req.params.userId
  UserModel.findByIdAndRemove(userId)
   .then(()=>{
-    res.redirect('/')
+    res.redirect('/home')
   })
   .catch((error)=>{
-    console.log('delete fail')
+    console.log(error)
   })
 })
 module.exports = router

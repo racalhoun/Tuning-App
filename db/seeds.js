@@ -20,7 +20,15 @@ const UserModel = Schema.UserModel;
 const CarStable = Schema.CarStable;
 const TunerModel = Schema.TunerModel;
 const PackageModel = Schema.PackageModel;
-
+PackageModel.remove({}, function (err) {
+    console.log(err);
+});
+TunerModel.remove({}, function (err) {
+    console.log(err);
+});
+UserModel.remove({}, function (err) {
+    console.log(err);
+});
 const nedPenny = new UserModel({
     name: 'Ned Penny',
     phoneNumber: 123456789,
@@ -111,6 +119,27 @@ const stage3 = new PackageModel({
     description: 'Everything included in Stage 1 & 2, plus: complete tuning of VE tables under drive cycle, transmission shift pattern correction, minor trroubleshooting and repair of defective subsystems that negatively effect ability to completely tune vehicle.',
     price: 700
 }); 
+stage1.save()
+.then(()=>{
+    console.log('stage 1 saved')
+})
+.catch((error)=>{
+    console.log(error)
+})
+stage2.save()
+.then(()=>{
+    console.log('stage 2 saved')
+})
+.catch((error)=>{
+    console.log(error)
+})
+stage3.save()
+.then(()=>{
+    console.log('stage 3 saved')
+})
+.catch((error)=>{
+console.log(error)
+})
 const users = [nedPenny, sallyWally]
 const tuner = [jimRivers, fredMuskie]
 const package = [stage1, stage2, stage3]
